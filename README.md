@@ -21,11 +21,8 @@ pip install rich[jupyter]
 ```
 
 ## Overview
-**Gotta** is a data-driven constitution discovery and alignment framework for LLMs. Unlike existing alignment techniques, **IterAlign** has the following appealing features.
-First, it does not require massive human preference data or human composed constitutions, but only takes a base LLM and a red teaming dataset as input.
-The red teaming data is much cheaper to obtain compared to crowd-sourced human preference data.
-Second, it does not require handwritten constitutions to be provided a priori.
-Instead, it leverages the red teaming instances and a strong LLM to discover constitutions automatically, leading to a better aligned model and a set of valuable data-driven constitutions.
+**Gotta** is a a Generative prOmpT-based daTa Augmentation framework for few-shot question answering (QA).
+In **Gotta**, we design a knowledge-based cloze task to serve as a companion to enhance the main QA task. To make the cloze task more dedicated for QA, we utilize publicly available knowledge bases and focus on the covered entities by only selecting the entities in the text as the object to construct cloze problems. By constructing more data for fine-tuning, we incorporate the external knowledge in the knowledge bases in the hope of introducing more inductive bias that is beneficial to the QA task. The inductive bias provides extra supervision beyond the weak supervision signals only provided in the few-shot QA training set. Intuitively, the cloze task is to imitate the human behavior of understanding the context by filling in the blanks. We conduct this entity-aware cloze because identifying the entities and understanding their relations is crucial for solving QA problems on the same chunk of text. 
 
 <p align="center">
   <img src="figs/framework.png" width="800px"/>
