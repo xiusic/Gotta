@@ -15,7 +15,9 @@ This repository contains the source code and datasets for [Gotta: Generative Few
 The code is written in Python 3.8. Before running, you need to first install the required packages by typing following commands (Using a virtual environment is recommended):
 
 ```
-pip3 install -r requirements.txt
+pip install tokenizers==0.11.6 
+pip install transformers==4.17.0
+pip install rich[jupyter]
 ```
 
 ## Overview
